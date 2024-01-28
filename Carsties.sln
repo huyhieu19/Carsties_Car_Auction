@@ -5,21 +5,20 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{36998C43-2B3F-400D-8E8C-D1811FE859D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuctionService", "src\AuctionService\AuctionService.csproj", "{6EB8E2B2-5337-4925-B907-30FB348A0CD1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuctionService", "src\AuctionService\AuctionService.csproj", "{6EB8E2B2-5337-4925-B907-30FB348A0CD1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchService", "src\SearchService\SearchService.csproj", "{0DA2830A-C9C9-4FC7-A278-B32EB58F16F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SearchService", "src\SearchService\SearchService.csproj", "{0DA2830A-C9C9-4FC7-A278-B32EB58F16F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contracts", "src\Contracts\Contracts.csproj", "{108D4D53-A852-4972-BAD9-9490128A87EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contracts", "src\Contracts\Contracts.csproj", "{108D4D53-A852-4972-BAD9-9490128A87EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityService", "src\IdentityService\IdentityService.csproj", "{11DE1DB9-D5CA-4D19-A7D7-2F428D43006E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityService", "src\IdentityService\IdentityService.csproj", "{11DE1DB9-D5CA-4D19-A7D7-2F428D43006E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GatewayService", "GatewayService\GatewayService.csproj", "{6F4F1BCC-EC82-4716-A5C7-14436283CB5A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{6EB8E2B2-5337-4925-B907-30FB348A0CD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -38,11 +37,22 @@ Global
 		{11DE1DB9-D5CA-4D19-A7D7-2F428D43006E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11DE1DB9-D5CA-4D19-A7D7-2F428D43006E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11DE1DB9-D5CA-4D19-A7D7-2F428D43006E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F4F1BCC-EC82-4716-A5C7-14436283CB5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F4F1BCC-EC82-4716-A5C7-14436283CB5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F4F1BCC-EC82-4716-A5C7-14436283CB5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F4F1BCC-EC82-4716-A5C7-14436283CB5A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{6EB8E2B2-5337-4925-B907-30FB348A0CD1} = {36998C43-2B3F-400D-8E8C-D1811FE859D2}
 		{0DA2830A-C9C9-4FC7-A278-B32EB58F16F8} = {36998C43-2B3F-400D-8E8C-D1811FE859D2}
 		{108D4D53-A852-4972-BAD9-9490128A87EA} = {36998C43-2B3F-400D-8E8C-D1811FE859D2}
 		{11DE1DB9-D5CA-4D19-A7D7-2F428D43006E} = {36998C43-2B3F-400D-8E8C-D1811FE859D2}
+		{6F4F1BCC-EC82-4716-A5C7-14436283CB5A} = {36998C43-2B3F-400D-8E8C-D1811FE859D2}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2A7D77DE-5DA2-4992-B064-230979F291EA}
 	EndGlobalSection
 EndGlobal
