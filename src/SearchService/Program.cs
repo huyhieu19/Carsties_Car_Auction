@@ -1,10 +1,7 @@
 using MassTransit;
-using MongoDB.Driver;
-using MongoDB.Entities;
 using Polly;
 using Polly.Extensions.Http;
 using SearchService;
-using SearchService.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
