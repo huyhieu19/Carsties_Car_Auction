@@ -26,6 +26,15 @@ builder.Services.AddMassTransit(x =>
     // Importance: Khai bao su dung rabbitmq
     x.UsingRabbitMq((context, cfg) =>
     {
+
+        // Add config host
+        cfg.Host(builder.Configuration["RabbitMq:Host"], "/", Host =>
+        {
+            Host.Username(builder.Configuration.GetValue("RabbitMq:Username", "guest"));
+            Host.Password(builder.Configuration.GetValue("RabbitMq:Password", "guest"));
+        });
+
+
         cfg.ReceiveEndpoint("rearch-auction-created", e =>
         {
             e.UseMessageRetry(r => r.Interval(5, 5));
