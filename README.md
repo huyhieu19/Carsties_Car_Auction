@@ -5,5 +5,4 @@ This is a personal project whose main purpose is to learn an overview of buildin
 The languages used are C#, Javascript. Technologies used: .Net Core, EF Core, SignalR, Docker, RabbitMQ, Kubernetes, NextJS...
 
 ## System diagram:
-
-![alt](../Carsties/image/Aution%20architecture.png)
+<img src="../Carsties/image/Aution%20architecture.png">
