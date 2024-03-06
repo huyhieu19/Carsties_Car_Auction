@@ -33,6 +33,11 @@ public class SearchController : ControllerBase
             _ => query.Match(x => x.AuctionEnd > DateTime.UtcNow)
         };
 
+        if (!string.IsNullOrEmpty(searchParams.SearchTerm))
+        {
+            query.Match(x => x.Model == searchParams.SearchTerm);
+        }
+
         if (!string.IsNullOrEmpty(searchParams.Seller))
         {
             query.Match(x => x.Seller == searchParams.Seller);
