@@ -27,6 +27,10 @@ builder.Services.AddMassTransit(x =>
         o.UseBusOutbox();
     });
 
+    x.AddConsumersFromNamespaceContaining<AuctionCreatedFaultConsumer>();
+
+    x.SetEndpointNameFormatter(new KebabCaseEndpointNameFormatter("auction", false));
+
     x.UsingRabbitMq((context, cfg) =>
     {
         // Add config host
@@ -50,6 +54,8 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     options.TokenValidationParameters.ValidateAudience = false;
     options.TokenValidationParameters.NameClaimType = "username";
 });
+builder.Services.AddScoped<IAuctionRepository, AuctionRepository>();
+builder.Services.AddGrpc();
 
 var app = builder.Build();
 
@@ -68,6 +74,8 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+app.MapGrpcService<GrpcAuctionService>();
+
 
 try
 {
@@ -79,3 +87,5 @@ catch (Exception e)
 }
 
 app.Run();
+
+public partial class Program { }

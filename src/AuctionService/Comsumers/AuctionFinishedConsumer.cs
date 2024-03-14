@@ -3,33 +3,32 @@ using AuctionService.Entities;
 using Contracts;
 using MassTransit;
 
-namespace AuctionService.Comsumers
+namespace AuctionService;
+
+public class AuctionFinishedConsumer : IConsumer<AuctionFinished>
 {
-    public class AuctionFinishedConsumer : IConsumer<AuctionFinished>
+    private readonly AuctionDbContext _dbContext;
+
+    public AuctionFinishedConsumer(AuctionDbContext dbContext)
     {
-        private readonly AuctionDbContext _auctionDbContext;
-        private readonly ILogger<AuctionFinishedConsumer> _logger;
+        _dbContext = dbContext;
+    }
 
-        public AuctionFinishedConsumer(AuctionDbContext auctionDbContext, ILogger<AuctionFinishedConsumer> logger)
+    public async Task Consume(ConsumeContext<AuctionFinished> context)
+    {
+        Console.WriteLine("--> Consuming auction finished");
+
+        var auction = await _dbContext.Auctions.FindAsync(Guid.Parse(context.Message.AuctionId));
+
+        if (context.Message.ItemSold)
         {
-            _auctionDbContext = auctionDbContext;
-            _logger = logger;
+            auction.Winner = context.Message.Winner;
+            auction.SoldAmount = context.Message.Amount;
         }
 
-        public async Task Consume(ConsumeContext<AuctionFinished> consumeContext)
-        {
-            _logger.LogInformation("--> Consumer Auctiomn Finished");
-            var auction = await _auctionDbContext.Auctions.FindAsync(consumeContext.Message.AuctionId);
+        auction.Status = auction.SoldAmount > auction.ReservePrice
+            ? Status.Finished : Status.ReserveNotMet;
 
-            if (consumeContext.Message.ItemSold)
-            {
-                auction.Winner = consumeContext.Message.Winner;
-                auction.SoldAmount = consumeContext.Message.Amount;
-            }
-
-            auction.Status = auction.SoldAmount > auction.ReservePrice ? Status.Finished : Status.ReserveNotMet;
-
-            await _auctionDbContext.SaveChangesAsync();
-        }
+        await _dbContext.SaveChangesAsync();
     }
 }
