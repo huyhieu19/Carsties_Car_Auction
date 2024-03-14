@@ -13,9 +13,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contracts", "src\Contracts\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityService", "src\IdentityService\IdentityService.csproj", "{11DE1DB9-D5CA-4D19-A7D7-2F428D43006E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GatewayService", "src\GatewayService\GatewayService.csproj", "{6F4F1BCC-EC82-4716-A5C7-14436283CB5A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GatewayService", "src\GatewayService\GatewayService.csproj", "{6F4F1BCC-EC82-4716-A5C7-14436283CB5A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BiddingService", "src\BiddingService\BiddingService.csproj", "{C22AE6DF-BD4A-47A3-BE0D-131BBD167869}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BiddingService", "src\BiddingService\BiddingService.csproj", "{C22AE6DF-BD4A-47A3-BE0D-131BBD167869}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NotificationService", "src\NotificationService\NotificationService.csproj", "{FD7AB610-CC2C-44D0-BDB2-9821B7D3FCC1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{108D4D53-A852-4972-BAD9-9490128A87EA} = {108D4D53-A852-4972-BAD9-9490128A87EA}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +52,10 @@ Global
 		{C22AE6DF-BD4A-47A3-BE0D-131BBD167869}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C22AE6DF-BD4A-47A3-BE0D-131BBD167869}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C22AE6DF-BD4A-47A3-BE0D-131BBD167869}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD7AB610-CC2C-44D0-BDB2-9821B7D3FCC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD7AB610-CC2C-44D0-BDB2-9821B7D3FCC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD7AB610-CC2C-44D0-BDB2-9821B7D3FCC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD7AB610-CC2C-44D0-BDB2-9821B7D3FCC1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -58,6 +67,7 @@ Global
 		{11DE1DB9-D5CA-4D19-A7D7-2F428D43006E} = {36998C43-2B3F-400D-8E8C-D1811FE859D2}
 		{6F4F1BCC-EC82-4716-A5C7-14436283CB5A} = {36998C43-2B3F-400D-8E8C-D1811FE859D2}
 		{C22AE6DF-BD4A-47A3-BE0D-131BBD167869} = {36998C43-2B3F-400D-8E8C-D1811FE859D2}
+		{FD7AB610-CC2C-44D0-BDB2-9821B7D3FCC1} = {36998C43-2B3F-400D-8E8C-D1811FE859D2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2A7D77DE-5DA2-4992-B064-230979F291EA}
